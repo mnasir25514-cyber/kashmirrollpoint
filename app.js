@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const SHOP_WHATSAPP_NUMBER = "923141322340";
+  const SHOP_WHATSAPP_NUMBER = "923138859611";
   const STORAGE_KEY = "kashmir-roll-point-cart-v1";
   const PAGE_SIZE = 12;
 
