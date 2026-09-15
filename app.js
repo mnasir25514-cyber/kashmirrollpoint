@@ -505,33 +505,28 @@
     $("#checkout-modal").showModal();
   }
 
-  function buildOrderMessage(order) {
-    return (
-      `[KASHMIR ROLL POINT] - NEW ORDER\n\n` +
-      `Order Number: ${order.orderNumber}\n\n` +
-      `CUSTOMER DETAILS\n\n` +
-      `Name: ${order.customerName}\n` +
-      `Phone: ${order.customerPhone}\n` +
-      `Address: ${order.customerAddress}\n\n` +
-      `ORDER DETAILS\n\n` +
-      `${order.items
-        .map(
-          (entry, index) =>
-            `${index + 1}. ${entry.name}\n` +
-            `Quantity: ${entry.quantity}\n` +
-            `Price: ${money(entry.price)}\n` +
-            `Subtotal: ${money(
-              entry.quantity *
-                entry.price
-            )}`
-        )
-        .join("\n\n")}\n\n` +
-      `TOTAL: ${money(order.total)}\n\n` +
-      `Payment: Cash on Delivery\n\n` +
-      `Thank you for ordering!`
-    );
-  }
-
+function buildOrderMessage(order) {
+  return (
+    `[KASHMIR ROLL POINT] - NEW ORDER\n\n` +
+    `Order Number: ${order.orderNumber}\n\n` +
+    `CUSTOMER DETAILS\n\n` +
+    `Name: ${order.customerName}\n` +
+    `Phone: ${order.customerPhone}\n` +
+    `Address: ${order.customerAddress}\n\n` +
+    `ORDER DETAILS\n\n` +
+    `${order.items
+      .map(
+        (entry, index) =>
+          `${index + 1}. ${entry.name}\n` +
+          `Quantity: ${entry.quantity}\n` +
+          `Price: ${money(entry.price)}`
+      )
+      .join("\n\n")}\n\n` +
+    `TOTAL: ${money(order.total)}\n\n` +
+    `Payment: Cash on Delivery\n\n` +
+    `Thank you for ordering!`
+  );
+}
   function submitCheckout(event) {
     event.preventDefault();
 
